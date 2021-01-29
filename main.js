@@ -212,6 +212,7 @@ const pets = [
 ];
   
 
+
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint;
@@ -221,20 +222,46 @@ const petBuilder = (taco) => {
   let domString = '';
   taco.forEach((item, i) => {
     domString += `<div class="card mb-3" style="width: 18rem;" id=${i}>
-                    <h5 class="card-title">${item.name}</h5>
+                    <h5 class="card-title bg-secondary text-center">${item.name}</h5>
                     <img src="${item.imageUrl}" class="card-img-top" alt="${item.name}">
-                      <div class="card-body">
+                      <div class="card-body text-center">
                         <p class="card-text">${item.color}</p>
                         <p class="card-text">${item.specialSkill}</p>
-                        <p class="card-text">${item.type}</p>
+                        <p class="card-text"><span id='test'>${item.type}</span></p>
                       </div>
-                    </div>`   
-  })
+                    </div>`
+  })  
   printToDom('#pets', domString);
 }
 
-const init = () => {
- petBuilder(pets) 
+
+
+const handleButtonClick = (e) => {
+  const buttonId = e.target.id;
+  const selectedPets = [];
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === buttonId) {
+      selectedPets.push(pets[i]);
+    } 
+  }
+  if (buttonId === 'all') {
+    petBuilder(pets);
+  } else {
+    petBuilder(selectedPets);
+  }
 }
+
+const buttonEvents = () => {
+  document.querySelector('#cat').addEventListener('click', handleButtonClick);
+  document.querySelector('#dog').addEventListener('click', handleButtonClick);
+  document.querySelector('#dino').addEventListener('click', handleButtonClick);
+  document.querySelector('#all').addEventListener('click', handleButtonClick);
+}
+
+const init = () => {
+  buttonEvents();
+  petBuilder(pets);
+}
+
 
 init();
