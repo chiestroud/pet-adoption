@@ -222,12 +222,13 @@ const petBuilder = (taco) => {
   let domString = '';
   taco.forEach((item, i) => {
     domString += `<div class="card mb-3" style="width: 18rem;" id=${i}>
-                    <h5 class="card-title bg-secondary text-center">${item.name}</h5>
-                    <img src="${item.imageUrl}" class="card-img-top" alt="${item.name}">
+                    <h5 class="card-title bg-warning text-center">${item.name}</h5>
+                    <img src="${item.imageUrl}" class="card-img-top p-2" alt="${item.name}">
                       <div class="card-body text-center">
                         <p class="card-text">${item.color}</p>
                         <p class="card-text">${item.specialSkill}</p>
-                        <p class="card-text"><span id='test'>${item.type}</span></p>
+                        <p class="card-text">${item.type}</p>
+                        <button type="button" class="btn btn-danger" id="${i}">Delete</button>
                       </div>
                     </div>`
   })  
@@ -256,6 +257,17 @@ const buttonEvents = () => {
   document.querySelector('#dog').addEventListener('click', handleButtonClick);
   document.querySelector('#dino').addEventListener('click', handleButtonClick);
   document.querySelector('#all').addEventListener('click', handleButtonClick);
+  document.querySelector('#pets').addEventListener('click', deletePet);
+}
+
+const deletePet = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+
+  if (targetType === 'button') {
+    pets.splice(targetId, 1);
+  }
+  petBuilder(pets);
 }
 
 const init = () => {
