@@ -1,9 +1,25 @@
 body {
-  background-color:lightgreen;
+  background-color:#F4F6F6;
 }
 
 .buttons {
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
+}
+
+.cat {
+  background-color:#CFE5F7;
+}
+
+.dog {
+  background-color:#00FFFF ;
+}
+
+.dino {
+  background-color: #9FE2BF ;
+}
+
+.card-title {
+  padding-bottom: 0.4rem;
 }

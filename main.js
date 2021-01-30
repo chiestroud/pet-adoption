@@ -227,9 +227,9 @@ const petBuilder = (taco) => {
                       <div class="card-body text-center">
                         <p class="card-text">${item.color}</p>
                         <p class="card-text">${item.specialSkill}</p>
-                        <p class="card-text">${item.type}</p>
-                        <button type="button" class="btn btn-danger" id="${i}">Delete</button>
                       </div>
+                      <div class="card-text text-center ${item.type}">${item.type}</div>
+                      <button type="button" class="btn btn-danger" id="${i}">Delete</button>
                     </div>`
   })  
   printToDom('#pets', domString);
