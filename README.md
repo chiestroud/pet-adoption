@@ -28,6 +28,7 @@ Any user
 
 ### Link to Loom video walkthrough of your app (no more than 1 minute long! Make it great)
 
+<https://www.loom.com/share/39e570122bf145219c219b91be17ae33>
 
 
 
@@ -35,11 +36,11 @@ Any user
 ### Below shows the original requirement to complete this project
 
 
-# Adoption Website
+### Adoption Website
 
-## Setup
+### Setup
 * Clone this repo to your exercises directory
 * Create a setup branch and push up the usual stuff
 * Review the [Instructions](instructions.md)
 
-# UPDATE THIS README WHEN THE ASSIGNMENT IS COMPLETED
+### UPDATE THIS README WHEN THE ASSIGNMENT IS COMPLETED
